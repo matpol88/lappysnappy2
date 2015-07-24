@@ -1,0 +1,1027 @@
+  [1m[36m (6.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-24 13:21:20 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.1.8/lib/rails/templates/rails/welcome/index.html.erb (15.1ms)
+Completed 200 OK in 124ms (Views: 73.9ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20150712152738)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150712152738"]]
+  [1m[36m (3.8ms)[0m  [1mcommit transaction[0m
+Migrating to Addnametousers (20150712152823)
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNameToUsers (20150712154134)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mALTER TABLE "users" ADD "name" varchar(255)[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150712154134"]]
+  [1m[36m (22.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateWeddings (20150712184926)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "weddings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "date" varchar(255), "location" varchar(255), "guests" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150712184926"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.0ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.0ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-24 13:25:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_header.html.erb (5.0ms)
+Completed 200 OK in 8090ms (Views: 8064.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:25 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/assets/blurred.jpg" for 127.0.0.1 at 2015-07-24 13:25:26 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:25:30 -0400
+Processing by WeddingsController#index as HTML
+  [1m[35mWedding Load (0.0ms)[0m  SELECT "weddings".* FROM "weddings"
+  Rendered weddings/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 202ms (Views: 162.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2015-07-24 13:25:36 -0400
+Processing by RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (417.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 597ms (Views: 595.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5lhZ2K21NDrRfOB+w4Rfczyof2TAk1Kyc9V0ScbDLyM=", "user"=>{"name"=>"matt", "email"=>"matpol88@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'matpol88@gmail.com' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-24 17:25:43.208175"], ["email", "matpol88@gmail.com"], ["encrypted_password", "$2a$10$RACt5k./IXmqI0.cNZ8FO.6TFi.mZ6y60nQ3fEKrcpp/9DYPEFiDG"], ["name", "matt"], ["updated_at", "2015-07-24 17:25:43.208175"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Binary data inserted for `string` type on column `current_sign_in_ip`
+Binary data inserted for `string` type on column `last_sign_in_ip`
+  [1m[35mSQL (1.0ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_at" = ?, "last_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = 1  [["current_sign_in_at", "2015-07-24 17:25:43.223186"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_at", "2015-07-24 17:25:43.223186"], ["last_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2015-07-24 17:25:43.225189"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 211ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (44.0ms)
+Completed 200 OK in 230ms (Views: 230.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:25:43 -0400
+
+
+Started GET "/assets/blurred.jpg" for 127.0.0.1 at 2015-07-24 13:25:44 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:25:46 -0400
+Processing by WeddingsController#index as HTML
+  [1m[36mWedding Load (0.0ms)[0m  [1mSELECT "weddings".* FROM "weddings"[0m
+  Rendered weddings/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 171ms (Views: 169.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/weddings/new" for 127.0.0.1 at 2015-07-24 13:25:47 -0400
+Processing by WeddingsController#new as HTML
+  Rendered weddings/_form.html.erb (14.0ms)
+  Rendered weddings/new.html.erb within layouts/application (16.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 185ms (Views: 182.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/weddings" for 127.0.0.1 at 2015-07-24 13:26:03 -0400
+Processing by WeddingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5lhZ2K21NDrRfOB+w4Rfczyof2TAk1Kyc9V0ScbDLyM=", "wedding"=>{"name"=>"My wedding ", "date"=>"6 15 1988", "location"=>"new york", "guests"=>"250", "user_id"=>""}, "commit"=>"Create Wedding"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `email' for #<Wedding:0x6206e50>):
+  app/controllers/weddings_controller.rb:25:in `create'
+
+
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (20.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (65.8ms)
+
+
+Started POST "/weddings" for 127.0.0.1 at 2015-07-24 13:26:09 -0400
+Processing by WeddingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5lhZ2K21NDrRfOB+w4Rfczyof2TAk1Kyc9V0ScbDLyM=", "wedding"=>{"name"=>"My wedding ", "date"=>"6 15 1988", "location"=>"new york", "guests"=>"250", "user_id"=>"1"}, "commit"=>"Create Wedding"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 5ms
+
+NoMethodError (undefined method `email' for #<Wedding:0x5350200>):
+  app/controllers/weddings_controller.rb:25:in `create'
+
+
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (30.6ms)
+
+
+Started GET "/weddings/new" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+Processing by WeddingsController#new as HTML
+  Rendered weddings/_form.html.erb (14.0ms)
+  Rendered weddings/new.html.erb within layouts/application (15.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (11.0ms)
+Completed 200 OK in 210ms (Views: 205.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:57 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:27:58 -0400
+
+
+Started POST "/weddings" for 127.0.0.1 at 2015-07-24 13:28:27 -0400
+Processing by WeddingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5lhZ2K21NDrRfOB+w4Rfczyof2TAk1Kyc9V0ScbDLyM=", "wedding"=>{"name"=>"Test", "date"=>"test", "location"=>"test", "guests"=>"250"}, "commit"=>"Create Wedding"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "weddings" ("created_at", "date", "guests", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-24 17:28:27.796093"], ["date", "test"], ["guests", 250], ["location", "test"], ["name", "Test"], ["updated_at", "2015-07-24 17:28:27.796093"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/weddings/1
+Completed 302 Found in 20ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/weddings/1" for 127.0.0.1 at 2015-07-24 13:28:27 -0400
+Processing by WeddingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mWedding Load (0.0ms)[0m  SELECT  "weddings".* FROM "weddings"  WHERE "weddings"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered weddings/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 198ms (Views: 196.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:28 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:28:29 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:28:31 -0400
+Processing by WeddingsController#index as HTML
+  [1m[35mWedding Load (0.0ms)[0m  SELECT "weddings".* FROM "weddings"
+  Rendered weddings/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 172ms (Views: 169.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:30:12 -0400
+Processing by WeddingsController#index as HTML
+  [1m[35mWedding Load (0.0ms)[0m  SELECT "weddings".* FROM "weddings"
+  Rendered weddings/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 187ms (Views: 187.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:13 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:14 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+Processing by WeddingsController#index as HTML
+  [1m[35mWedding Load (0.0ms)[0m  SELECT "weddings".* FROM "weddings"
+  Rendered weddings/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 191ms (Views: 190.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:25 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:30:26 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+Processing by WeddingsController#index as HTML
+  [1m[35mWedding Load (0.0ms)[0m  SELECT "weddings".* FROM "weddings"
+  Rendered weddings/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 176ms (Views: 176.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:19 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:20 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:31:40 -0400
+Processing by WeddingsController#index as HTML
+  [1m[35mWedding Load (0.0ms)[0m  SELECT "weddings".* FROM "weddings"
+  Rendered weddings/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 186ms (Views: 185.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:40 -0400
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:40 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:41 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:42 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+Processing by WeddingsController#index as HTML
+  [1m[35mWedding Load (0.0ms)[0m  SELECT "weddings".* FROM "weddings"
+  Rendered weddings/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 179ms (Views: 178.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:47 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:31:48 -0400
+
+
+Started GET "/weddings/new" for 127.0.0.1 at 2015-07-24 13:31:58 -0400
+Processing by WeddingsController#new as HTML
+  Rendered weddings/_form.html.erb (8.0ms)
+  Rendered weddings/new.html.erb within layouts/application (10.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 178ms (Views: 176.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/weddings" for 127.0.0.1 at 2015-07-24 13:32:18 -0400
+Processing by WeddingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5lhZ2K21NDrRfOB+w4Rfczyof2TAk1Kyc9V0ScbDLyM=", "wedding"=>{"name"=>"Mike and Molly", "date"=>"2/15/1988", "location"=>"New york", "guests"=>"250"}, "commit"=>"Create Wedding"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "weddings" ("created_at", "date", "guests", "location", "name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2015-07-24 17:32:18.713355"], ["date", "2/15/1988"], ["guests", 250], ["location", "New york"], ["name", "Mike and Molly"], ["updated_at", "2015-07-24 17:32:18.713355"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/weddings/2
+Completed 302 Found in 14ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/weddings/2" for 127.0.0.1 at 2015-07-24 13:32:18 -0400
+Processing by WeddingsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mWedding Load (0.0ms)[0m  SELECT  "weddings".* FROM "weddings"  WHERE "weddings"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered weddings/show.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (17.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (19.0ms)
+Completed 200 OK in 167ms (Views: 147.1ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.css?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/font-awesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.css?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/pages.css?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/twitter/bootstrap/transition.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/twitter/bootstrap/alert.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tab.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:19 -0400
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/popover.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/collapse.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/carousel.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap/affix.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/pages.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/weddings.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-24 13:32:20 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:32:23 -0400
+Processing by WeddingsController#index as HTML
+  [1m[35mWedding Load (0.0ms)[0m  SELECT "weddings".* FROM "weddings"
+  Rendered weddings/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 168ms (Views: 166.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-07-24 13:32:25 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 168ms (Views: 168.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/blurred.jpg" for 127.0.0.1 at 2015-07-24 13:32:25 -0400
+
+
+Started GET "/weddings" for 127.0.0.1 at 2015-07-24 13:32:27 -0400
+Processing by WeddingsController#index as HTML
+  [1m[36mWedding Load (1.0ms)[0m  [1mSELECT "weddings".* FROM "weddings"[0m
+  Rendered weddings/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 167ms (Views: 165.1ms | ActiveRecord: 2.0ms)
